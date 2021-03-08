@@ -1,0 +1,85 @@
+//Crear package Json
+1-Ubicarte en la carpeta deseada 
+||| Comandos cd.. | Subir a una carpeta superior 
+||| Comando cd + nombre de la carpeta ó docu 
+||| Comando pwd para confirmar que estas en la carpeta/docu que quieres
+2-Comando npm init
+3-Especificar descripcion,datos de autor ...etc
+
+ 
+
+//Instalar Express
+------------------
+1-Comando npm install express --save (Express) 
+||| Comprobar en package.json
+2-Declarar constantes en index.js 
+|||   const express = require('express')
+|||   const app = express()
+
+ 
+
+//Instalar Nodemon
+------------------
+1- Comando npm install -g nodemon 
+||| Comprobar en package.json
+||| Añadir script  "start": "nodemon index.js" | En package.json
+2- Comando npm install
+
+ 
+
+//Instalar body-parser
+----------------------
+1-Comando npm install body-parser
+||| Agregar en index.js | En constantes
+const bodyParser =require('body-parser')  
+|||Agregar en index.js | En metodos 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+ 
+
+// Crear Rutas | En carpetas 
+||| Crear carpeta routes| 
+//Crear Rutas |En Index.js | En constantes | Si es la ruta es ppal
+||| const nombreRuta =require('./nombreCarpeta/') 
+//Crear Rutas |En Index.js | En constantes |  | Si es la ruta es sec
+||| const nombreRuta =require('./nombreCarpeta/archivo.js')
+
+ 
+
+//Crear Rutas | En index.js | En metodos 
+||| app.use( ' / ', nombreRuta); | Es la const nombreRuta 
+
+
+
+//Instalar EXPRESS GENERATOR
+----------------------------
+Introducir este comando en la consola de windows, ya que la consola de visualCode está
+limitada y no tiene permisos de administrador. "npm install express-generator -g"
+
+//Una vez instalado, ejecutamos el comando siguiente "express --view=ejs 5.expressGenerator"
+en la misma consola de windows, y podremos comprobar que nos ha creado una carpeta con el
+nombre que le hemos indicado "5.expressGenerator" con una estructura básica de archivos.
+Para que nos cree la carpeta donde queremos, tenemos que estar en la ruta donde deseamos
+crearla. En este caso nos encontrabamos en la terminal de windows en la ruta de la carpeta
+NODE.
+
+//luego instalaríamos "npm install"
+
+//Y nodemon "npm install --save-dev nodemon"
+
+//Estos dos últimos comandos nos instalan algunas librerías mas que no te crea la estructura
+de archivos de express generator
+
+//tenemos que modificar en el .json esta línea --> "start": "node ./bin/www", y sustituirla
+por esta otra --> "start": "nodemon ./bin/www"
+
+//Ya podemos arrancar el servidor "npm start"
+
+
+//aprender a usar POSTMAN
+-------------------------
+1. le damos a "+" nuevo
+2. seleccionamos el método que queremos ejecutar
+3. introducimos la ruta que queremos ejecutar por ejemplo,"localhost:3000/"
+4. esto sirve para ejecutar las vistas sin utilizar un navegador
